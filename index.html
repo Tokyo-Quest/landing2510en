@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17149772539"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17149772539');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tokyo Quest — Turn spare time into an adventure</title>
+  <meta name="description" content="Got 30 minutes near a Tokyo station? Pick a quest and uncover 3 hidden spots. No booking. No app. Free in beta." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles-b.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tokyo Quest — Turn spare time into an adventure" />
+  <meta property="og:description" content="Pick a station. Follow hint-based routes. 3 hidden spots in ~30 minutes. Free in beta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tokyo-quest.com/en" />
+  <meta property="og:image" content="https://tokyo-quest.com/en/og-image.jpg" />
+
+  <!-- Favicons (reuse existing PNG) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicon.png" />
+  <link rel="apple-touch-icon" href="./favicon.png" />
+  <meta name="theme-color" content="#0a0d14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <a class="brand" href="https://tokyo-quest.com/en" aria-label="Tokyo Quest home">
+      <span class="brand-mark">TokyoQuest<span class="beta">[β]</span></span>
+    </a>
+    <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
+      <a class="nav-link" href="#benefits">Benefits</a>
+      <a class="nav-link" href="#stations">Stations</a>
+      <a class="nav-link" href="#how">How</a>
+      <a class="nav-link cta" href="https://tokyo-quest.com/en" data-cta="top">Get Started</a>
+    </nav>
+  </header>
+  <div class="nav-backdrop" hidden></div>
+
+  <!-- HERO -->
+  <main id="main">
+  <section class="hero" aria-label="Hero">
+    <picture>
+      <img class="hero-bg" src="./assets/hero.jpg" alt="" aria-hidden="true" width="1920" height="1080" sizes="100vw" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner container">
+      <h1>Turn spare minutes into a mini‑adventure.</h1>
+      <p class="sub">Walk from the station to hidden spots.Curated by locals’ perspective.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="hero">Start now</a>
+        <a class="btn ghost" href="#stations">Pick a nearby station</a>
+        <p class="trust">No booking · No app download · GPS-powered</p>
+      </div>
+
+      <!-- Quick station pills (primary test lever) -->
+      <div class="station-pills" id="stations-quick">
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/en/select?location=Shibuya" aria-label="Choose Shibuya quest">Shibuya</a>
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/en/select?location=Shinjuku" aria-label="Choose Shinjuku quest">Shinjuku</a>
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/en/select?location=Harajuku" aria-label="Choose Harajuku quest">Harajuku</a>
+      </div>
+
+      <!-- Time intent switch -->
+      <div class="time-band" role="group" aria-label="Time you have">
+        <span class="time-label">Time left:</span>
+        <button class="time-btn" data-min="15">15m</button>
+        <button class="time-btn is-active" data-min="30">30m</button>
+        <button class="time-btn" data-min="45">45m</button>
+        <span class="time-hint" id="time-hint">Best for 30m: 3 spots nearby</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS (copy-first) -->
+  <section id="benefits" class="section benefits">
+    <div class="container">
+      <h2 class="section-title">Turn spare time into real value in Tokyo</h2>
+      <div class="benefit-grid">
+        <article class="b-card">
+          <h3>No prep</h3>
+          <p>Pick a station and go. No booking or tickets.</p>
+        </article>
+        <article class="b-card">
+          <h3>No clichés</h3>
+          <p>Local eyes, unique places.</p>
+        </article>
+        <article class="b-card">
+          <h3>No lines</h3>
+          <p>Low‑crowd backstreets. Quick wins without queues.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section how">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <ol class="steps">
+        <li class="step">
+          <h3>1. Choose a station</h3>
+          <p>Shibuya, Shinjuku, or Harajuku.</p>
+        </li>
+        <li class="step">
+          <h3>2. Find hidden spots</h3>
+          <p>Small discoveries locals love.</p>
+        </li>
+        <li class="step">
+          <h3>3. Finish in ~30 minutes</h3>
+          <p>Designed to fit between plans.</p>
+        </li>
+      </ol>
+
+      <!-- In-app screenshot carousel -->
+      <div class="shots" role="region" aria-label="App screenshots">
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-01.webp" alt="Distance and bearing hints without spoilers" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>Distance and bearing hints without spoilers</figcaption>
+        </figure>
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-02.webp" alt="Playable areas map" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>Check playable areas on a map</figcaption>
+        </figure>
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-03.webp" alt="Meaning and history for each spot" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>Meaning and history behind each spot</figcaption>
+        </figure>
+      </div>
+      <p class="scroll-hint" aria-hidden="true">Swipe to view</p>
+    </div>
+  </section>
+
+  <!-- STATIONS -->
+  <section id="stations" class="section stations">
+    <div class="container">
+      <h2 class="section-title">Start near these stations</h2>
+      <div class="station-grid">
+        <a class="station-card" href="https://tokyo-quest.com/en/select?location=Shibuya" aria-label="Choose Shibuya quest">
+          <img src="./assets/playareas-shibuya.webp" alt="Shibuya area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>Shibuya</h3>
+            <p>Backstreets</p>
+          </div>
+        </a>
+        <a class="station-card" href="https://tokyo-quest.com/en/select?location=Shinjuku" aria-label="Choose Shinjuku quest">
+          <img src="./assets/playareas-shinjuku.webp" alt="Shinjuku area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>Shinjuku</h3>
+            <p>Hidden Shrines</p>
+          </div>
+        </a>
+        <a class="station-card" href="https://tokyo-quest.com/en/select?location=Harajuku" aria-label="Choose Harajuku quest">
+          <img src="./assets/playareas-harajuku.webp" alt="Harajuku area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>Harajuku</h3>
+            <p>Subculture</p>
+          </div>
+        </a>
+      </div>
+      <div class="center">
+        <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="mid">Start now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES band -->
+  <section class="section band">
+    <div class="container band-inner">
+      <h2 class="band-title">Solves common traveler moments</h2>
+      <ul class="jobs">
+        <li>Only 30 minutes free</li>
+        <li>Hate crowds</li>
+        <li>Already saw the famous spots</li>
+        <li>Want local vibes</li>
+      </ul>
+      <a class="btn ghost" href="https://tokyo-quest.com/en" data-cta="band">Try it now</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <details>
+        <summary>Do I need an app?</summary>
+        <p>No. It runs in your browser.</p>
+      </details>
+      <details>
+        <summary>Is it available in English?</summary>
+        <p>Yes. English first.</p>
+      </details>
+      <details>
+        <summary>Does it work offline?</summary>
+        <p>You need GPS and a basic connection.</p>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>About 30 minutes per quest.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" role="region" aria-label="Sticky call to action">
+    <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="sticky">Start Free</a>
+    <a class="btn ghost small" href="#stations">Nearest station</a>
+  </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small>© Tokyo Quest</small>
+      <nav aria-label="Legal">
+        <a class="footer-link" href="https://tokyo-quest.com/en/terms" target="_blank" rel="noreferrer">Terms of Use</a>
+        <a class="footer-link" href="mailto:kanetomo.seihyo@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./main-b.js" defer></script>
+</body>
+</html>
