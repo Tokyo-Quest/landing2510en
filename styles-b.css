@@ -427,45 +427,45 @@ html.nav-open, html.nav-open body{ overflow:hidden }
 #faq .faq-item h3{ font-size: 1rem; margin: 0.5rem 0 0.25rem;}
 #faq .faq-item p{ margin: 0 0 0.75rem; color: rgba(255,255,255,0.9); }
 
-/* === Hero screenshots (phones) === */
+/* --- OVERRIDE: Hero screenshots always side-by-side and fit in viewport --- */
 .hero-screens{
+  /* 横並びを固定（モバイルでも横） */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  /* 画面幅に収める（左右に余白を残す） */
+  gap: 4vw;                 /* 画面幅に比例する余白 */
+  max-width: 96vw;          /* はみ出し防止 */
   margin: 14px auto 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: min(860px, 92vw);
+  overflow: hidden;         /* ごく小さい画面でのはみ出しカット */
 }
 
+/* 枠のデザインはそのまま、生かしつつサイズは中身に合わせる */
 .phone-shot{
-  margin: 0;
   padding: 8px;
-  background: var(--card);
-  border: 1px solid var(--line);
   border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--card);
   box-shadow: 0 8px 24px rgba(0,0,0,.18);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* 画像サイズ調整：常に2枚が1画面に収まる */
 .phone-shot img{
   display: block;
-  width: 100%;
-  height: auto;              /* 画像のアスペクト比を維持 */
-  border-radius: 12px;       /* 端末っぽい角丸 */
+  height: auto;
+  /* 横基準でコントロール：モバイル〜PCまで2枚+余白で収める */
+  width: clamp(140px, 44vw, 300px);  /* 下限=小画面対策／中間=2枚で約88vw／上限=PCで大きすぎ防止 */
+  max-height: 62vh;                  /* 縦のはみ出し防止（ヒーローに収まる） */
+  border-radius: 12px;
 }
 
-/* スマホ：1カラムで縦積み＋少し大きめに */
-@media (max-width:720px){
-  .hero-screens{
-    grid-template-columns: 1fr;
-    gap: 12px;
-    max-width: 520px;        /* ヒーロー内で見切れないサイズ */
-  }
+/* 大きい画面では少しだけ広げてもOK（横はみ出しはmax-widthで抑制） */
+@media (min-width: 1200px){
+  .hero-screens{ max-width: 980px; }
+  .phone-shot img{ width: clamp(180px, 22vw, 340px); } /* PCワイド時に微拡大 */
 }
-
-/* 広めの画面：少し横に広げる */
-@media (min-width:960px){
-  .hero-screens{ max-width: 980px }
-}
-
