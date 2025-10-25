@@ -427,82 +427,38 @@ html.nav-open, html.nav-open body{ overflow:hidden }
 #faq .faq-item h3{ font-size: 1rem; margin: 0.5rem 0 0.25rem;}
 #faq .faq-item p{ margin: 0 0 0.75rem; color: rgba(255,255,255,0.9); }
 
-/* --- OVERRIDE: Hero screenshots always side-by-side and fit in viewport --- */
+/* === HERO screenshots: always side-by-side & no overflow === */
 .hero-screens{
-  /* 横並びを固定（モバイルでも横） */
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-
-  /* 画面幅に収める（左右に余白を残す） */
-  gap: 4vw;                 /* 画面幅に比例する余白 */
-  max-width: 96vw;          /* はみ出し防止 */
-  margin: 14px auto 0;
-  overflow: hidden;         /* ごく小さい画面でのはみ出しカット */
-}
-
-/* 枠のデザインはそのまま、生かしつつサイズは中身に合わせる */
-.phone-shot{
-  padding: 8px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* 画像サイズ調整：常に2枚が1画面に収まる */
-.phone-shot img{
-  display: block;
-  height: auto;
-  /* 横基準でコントロール：モバイル〜PCまで2枚+余白で収める */
-  width: clamp(140px, 44vw, 300px);  /* 下限=小画面対策／中間=2枚で約88vw／上限=PCで大きすぎ防止 */
-  max-height: 62vh;                  /* 縦のはみ出し防止（ヒーローに収まる） */
-  border-radius: 12px;
-}
-
-/* 大きい画面では少しだけ広げてもOK（横はみ出しはmax-widthで抑制） */
-@media (min-width: 1200px){
-  .hero-screens{ max-width: 980px; }
-  .phone-shot img{ width: clamp(180px, 22vw, 340px); } /* PCワイド時に微拡大 */
-}
-/* --- Hero: screenshots (scoped, no global side effects) --- */
-.hero-screens{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  gap:12px;
-  margin:12px auto 0;
-  padding:0;
-  max-width: min(100%, 840px);
-  /* スクショで横余りが出ないように */
-  overflow:hidden;
+  gap: clamp(8px, 2.5vw, 16px);
+  margin: 12px auto 0;
+  padding: 0 12px;                 /* 画面端の食い込み防止 */
+  max-width: min(100%, 960px);     /* デスクトップでの横はみ出し防止 */
+  overflow: hidden;                 /* 万一の横スクロール抑止（セクション内） */
 }
 
 .hero-screens img{
-  /* 2枚を常に横並びで収める（モバイル〜PC共通） */
-  flex: 1 1 0;
-  max-width: calc(50% - 6px); /* gap/2 を差し引き */
-  height:auto;
-
-  /* 白背景を発生させない（透過PNGを前提） */
-  display:block;
-  background: transparent !important;
-  border:0;
-  outline:0;
-
-  /* 画面内で見映えを安定させる */
-  border-radius:16px;
-  box-shadow: 0 16px 36px rgba(0,0,0,.35);
-  object-fit: contain;
+  flex: 0 1 calc(50% - clamp(4px, 1.25vw, 8px));
+  max-width: calc(50% - clamp(4px, 1.25vw, 8px)); /* 2枚＋余白で必ず収まる */
+  height: auto;
+  max-height: min(60vh, 520px);     /* 縦方向で見切れないよう制限 */
+  object-fit: contain;               /* 画像の切り抜き防止 */
+  display: block;
+  background: transparent !important;/* 白背出現の抑止（透過PNG想定） */
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.30);
 }
 
-/* 大きめ画面での余白バランス微調整（任意） */
-@media (min-width: 960px){
-  .hero-screens{ gap:16px; max-width: 920px; }
-  .hero-screens img{ max-width: calc(50% - 8px); }
+/* さらに小さな画面での安全策（ギャップを微縮小） */
+@media (max-width: 360px){
+  .hero-screens{ gap: 8px; padding: 0 8px; }
+  .hero-screens img{ max-height: 56vh; }
 }
+
+/* 全体の横スクロールを根こそぎ防止（安全ネット） */
+html, body{ overflow-x: hidden; }
+
 
