@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Tokyo Quest — Turn spare time into an adventure</title>
-  <meta name="description" content="Got 30 minutes near a Tokyo station? Pick a quest and uncover 3 hidden spots. No booking. No app. Free in beta." />
+  <meta name="description" content="Have 30–45 minutes near a Tokyo station? Follow gentle, local-curated routes to hidden spots—culture, not crowds. No booking.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,6 +37,31 @@
   <meta name="theme-color" content="#0a0d14" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="format-detection" content="telephone=no" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much walking is it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "About 1–2 km on mostly flat streets." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it crowded?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Routes favor quieter backstreets away from main tourist flows." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I learn about culture?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each stop includes a short story—history, customs, or local life." }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,6 +77,8 @@
       <a class="nav-link" href="#stations">Stations</a>
       <a class="nav-link" href="#how">How</a>
       <a class="nav-link cta" href="https://tokyo-quest.com/en" data-cta="top">Get Started</a>
+<p class="microcopy">No booking · No app download · GPS-powered</p>
+
     </nav>
   </header>
   <div class="nav-backdrop" hidden></div>
@@ -64,8 +91,8 @@
     </picture>
     <div class="hero-overlay"></div>
     <div class="hero-inner container">
-      <h1>Turn spare minutes into a mini‑adventure.</h1>
-      <p class="sub">Walk from the station to hidden spots.Curated by locals’ perspective.</p>
+      <h1>Turn spare minutes into a cultural mini-adventure.</h1>
+      <p class="hero-sub">Local-curated routes to hidden spots near major stations. No booking. Gentle walking.</p>
       <div class="hero-cta">
         <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="hero">Start now</a>
         <!--<a class="btn ghost" href="#stations">Pick a nearby station</a>
@@ -115,21 +142,20 @@
   <section id="how" class="section how">
     <div class="container">
       <h2 class="section-title">How it works</h2>
-      <ol class="steps">
-        <li class="step">
+      <div class="benefit-grid">
+        <article class="b-card">
           <h3>1. Choose a station</h3>
           <p>Shibuya, Shinjuku, or Harajuku.</p>
-        </li>
-        <li class="step">
+        </article>
+        <article class="b-card">
           <h3>2. Find hidden spots</h3>
           <p>Small discoveries locals love.</p>
-        </li>
-        <li class="step">
-          <h3>3. Finish in ~30 minutes</h3>
-          <p>Designed to fit between plans.</p>
-        </li>
-      </ol>
-
+        </article>
+        <article class="b-card">
+          <h3>3. Learn as you go</h3>
+          <p>Short cultural notes at each stop.</p>
+        </article>
+      </div>
       <!-- In-app screenshot carousel -->
       <div class="shots" role="region" aria-label="App screenshots">
         <figure class="shot">
@@ -155,24 +181,24 @@
       <h2 class="section-title">Start near these stations</h2>
       <div class="station-grid">
         <a class="station-card" href="https://tokyo-quest.com/en/select?location=Shibuya" aria-label="Choose Shibuya quest">
-          <img src="./assets/playareas-shibuya.webp" alt="Shibuya area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <img src="./assets/playareas-shibuya.webp" alt="Shibuya — everyday backstreets" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
           <div class="meta">
             <h3>Shibuya</h3>
-            <p>Backstreets</p>
+            <p>Everyday Backstreets</p>
           </div>
         </a>
         <a class="station-card" href="https://tokyo-quest.com/en/select?location=Shinjuku" aria-label="Choose Shinjuku quest">
-          <img src="./assets/playareas-shinjuku.webp" alt="Shinjuku area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <img src="./assets/playareas-shinjuku.webp" alt="Shinjuku — quiet shrines and alleys" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
           <div class="meta">
             <h3>Shinjuku</h3>
-            <p>Hidden Shrines</p>
+            <p>Quiet Shrines & Alleys</p>
           </div>
         </a>
         <a class="station-card" href="https://tokyo-quest.com/en/select?location=Harajuku" aria-label="Choose Harajuku quest">
-          <img src="./assets/playareas-harajuku.webp" alt="Harajuku area" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <img src="./assets/playareas-harajuku.webp" alt="Harajuku — subculture and small museums" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
           <div class="meta">
             <h3>Harajuku</h3>
-            <p>Subculture</p>
+            <p>Subculture & Small Museums</p>
           </div>
         </a>
       </div>
@@ -200,6 +226,19 @@
   <section class="section faq">
     <div class="container">
       <h2 class="section-title">FAQ</h2>
+
+      <details>
+        <summary>How much walking is it?</summary>
+        <p>About 1km on mostly flat streets.</p>
+      </details>
+      <details>
+        <summary>Is it crowded?</summary>
+        <p>Routes favor quieter backstreets away from main tourist flows.</p>
+      </details>
+      <details>
+        <summary>Will I learn about culture?</summary>
+        <p>Each stop includes a short story—history, customs, or local life.</p>
+      </details>
       <details>
         <summary>Do I need an app?</summary>
         <p>No. It runs in your browser.</p>
@@ -212,12 +251,9 @@
         <summary>Does it work offline?</summary>
         <p>You need GPS and a basic connection.</p>
       </details>
-      <details>
-        <summary>How long does it take?</summary>
-        <p>About 30 minutes per quest.</p>
-      </details>
     </div>
-  </section>
+
+</section>
 
   <!-- Sticky mobile CTA -->
   <div class="sticky-cta" role="region" aria-label="Sticky call to action">
