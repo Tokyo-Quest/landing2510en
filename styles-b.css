@@ -469,3 +469,40 @@ html.nav-open, html.nav-open body{ overflow:hidden }
   .hero-screens{ max-width: 980px; }
   .phone-shot img{ width: clamp(180px, 22vw, 340px); } /* PCワイド時に微拡大 */
 }
+/* --- Hero: screenshots (scoped, no global side effects) --- */
+.hero-screens{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:12px;
+  margin:12px auto 0;
+  padding:0;
+  max-width: min(100%, 840px);
+  /* スクショで横余りが出ないように */
+  overflow:hidden;
+}
+
+.hero-screens img{
+  /* 2枚を常に横並びで収める（モバイル〜PC共通） */
+  flex: 1 1 0;
+  max-width: calc(50% - 6px); /* gap/2 を差し引き */
+  height:auto;
+
+  /* 白背景を発生させない（透過PNGを前提） */
+  display:block;
+  background: transparent !important;
+  border:0;
+  outline:0;
+
+  /* 画面内で見映えを安定させる */
+  border-radius:16px;
+  box-shadow: 0 16px 36px rgba(0,0,0,.35);
+  object-fit: contain;
+}
+
+/* 大きめ画面での余白バランス微調整（任意） */
+@media (min-width: 960px){
+  .hero-screens{ gap:16px; max-width: 920px; }
+  .hero-screens img{ max-width: calc(50% - 8px); }
+}
+
