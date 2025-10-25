@@ -91,3 +91,23 @@
   doc.querySelectorAll('.top-nav .nav-link').forEach(a=>a.addEventListener('click', closeNav));
 
 })();
+
+
+// --- Marketing: track CTA clicks ---
+(function(){
+  try{
+    var ctas = document.querySelectorAll('[data-cta]');
+    ctas.forEach(function(a){
+      if(a.dataset._ctaBound) return;
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function'){
+          gtag('event','cta_click',{
+            'event_category':'engagement',
+            'event_label': a.getAttribute('data-cta') || a.textContent.trim()
+          });
+        }
+      }, {passive:true});
+      a.dataset._ctaBound = '1';
+    });
+  }catch(e){}
+})();
