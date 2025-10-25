@@ -10,7 +10,10 @@
   --accent:#1f6feb;
 }
 
-*{box-sizing:border-box transition-duration:200ms;}
+
+/* Global box-sizing & safe transitions */
+*, *::before, *::after { box-sizing: border-box; }
+:where(*) { transition-duration: 200ms; }
 html,body{
   margin:0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -282,42 +285,27 @@ html.nav-open, html.nav-open body{ overflow:hidden }
 
 /* --- Sticky CTA center alignment v2 --- */
 @media (max-width:720px){
-  .sticky-cta{ 
-    display:flex !important; 
-    align-items:center !important; 
-    justify-content:center !important; 
-    gap:12px !important; 
-    text-align:center !important;
-  }
-  .sticky-cta .btn{
-    flex: 0 0 auto !important;
-    width: auto !important;
-    white-space: nowrap !important;
-  }
-}
-
-
-/* --- Sticky CTA: enforce centered layout and equal widths --- */
-@media (max-width: 720px){
-  .sticky-cta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-  }
-  .sticky-cta .btn{
-    flex: 0 0 auto !important;
-    width: auto;
-    min-width: 156px;
-    text-align: center;
-  }
-  .sticky-cta .btn.small{ /* ensure the ghost button matches size */
-    min-width: 156px;
-  }
-}
-
+ .sticky-cta{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   flex-wrap: wrap; /* ← 折り返し許可 */
+   gap: 10px;
+   text-align:center;
+   padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+   max-width: 100%;
+ }
+ .sticky-cta .btn{
+   /* 2ボタンが小画面でも収まる柔軟レイアウト */
+   flex: 1 1 clamp(120px, 45%, 180px);
+   min-width: 0;
+   white-space: nowrap;
+ }
+ /* かなり狭い端末での最終調整 */
+ @media (max-width: 360px){
+   .sticky-cta{ gap: 8px; }
+   .sticky-cta .btn{ flex-basis: calc(50% - 4px); }
+ }
 
 /* Clean Guide cards */
 .card{ background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:none; }
@@ -461,4 +449,12 @@ html.nav-open, html.nav-open body{ overflow:hidden }
 /* 全体の横スクロールを根こそぎ防止（安全ネット） */
 html, body{ overflow-x: hidden; }
 
+/* --- Safe max-width guards --- */
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+
+/* 主要ラッパーは絶対に画面外へ広がらない */
+.container, .section, .hero, .band, .top-nav, .sticky-cta { max-width: 100%; }
+
+/* 念のため（既に定義あり） */
+html, body { overflow-x: hidden; }
 
