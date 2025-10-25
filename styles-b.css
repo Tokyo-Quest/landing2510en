@@ -426,3 +426,46 @@ html.nav-open, html.nav-open body{ overflow:hidden }
 /* Improve FAQ readability */
 #faq .faq-item h3{ font-size: 1rem; margin: 0.5rem 0 0.25rem;}
 #faq .faq-item p{ margin: 0 0 0.75rem; color: rgba(255,255,255,0.9); }
+
+/* === Hero screenshots (phones) === */
+.hero-screens{
+  margin: 14px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: min(860px, 92vw);
+}
+
+.phone-shot{
+  margin: 0;
+  padding: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-shot img{
+  display: block;
+  width: 100%;
+  height: auto;              /* 画像のアスペクト比を維持 */
+  border-radius: 12px;       /* 端末っぽい角丸 */
+}
+
+/* スマホ：1カラムで縦積み＋少し大きめに */
+@media (max-width:720px){
+  .hero-screens{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 520px;        /* ヒーロー内で見切れないサイズ */
+  }
+}
+
+/* 広めの画面：少し横に広げる */
+@media (min-width:960px){
+  .hero-screens{ max-width: 980px }
+}
+
