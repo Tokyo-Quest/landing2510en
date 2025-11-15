@@ -324,6 +324,7 @@ html.nav-open, html.nav-open body{ overflow:hidden }
    min-width: 0;
    white-space: nowrap;
  }
+}
  /* かなり狭い端末での最終調整 */
  @media (max-width: 360px){
    .sticky-cta{ gap: 8px; }
