@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Tokyo Quest — Turn spare time into an adventure</title>
-  <meta name="description" content="Have 30–45 minutes near a Tokyo station? Follow gentle, local-curated routes to hidden spots—culture, not crowds. No booking.">
+  <meta name="description" content="Have 30–45 minutes near a Tokyo station? Unlock self-guided routes to hidden spots from $5—culture, not crowds. No booking.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +25,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Tokyo Quest — Turn spare time into an adventure" />
-  <meta property="og:description" content="Pick a station. Follow hint-based routes. 3 hidden spots in ~30 minutes. Free in beta." />
+  <meta property="og:description" content="Pick a station. Follow hint-based routes. 3–4 hidden spots in ~30 minutes. Quests from $5, no booking." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tokyo-quest.com/en" />
   <meta property="og:image" content="https://tokyo-quest.com/en/og-image.jpg" />
@@ -74,11 +74,12 @@
     <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
     <nav id="primary-nav" class="top-nav" aria-label="Primary">
       <a class="nav-link" href="#benefits">Benefits</a>
+      <a class="nav-link" href="#value">What you get</a>
       <a class="nav-link" href="#stations">Stations</a>
       <a class="nav-link" href="#how">How</a>
-      <a class="nav-link cta" href="https://tokyo-quest.com/en" data-cta="top">Get Started</a>
-<p class="microcopy">No booking · No app download · GPS-powered</p>
-
+      <!-- 通常のテキストとして表示 -->
+      <span class="nav-copy">See quests from $5</span>
+      <p class="microcopy">Pay per quest · No booking · No app download</p>
     </nav>
   </header>
   <div class="nav-backdrop" hidden></div>
@@ -92,14 +93,13 @@
     <div class="hero-overlay"></div>
     <div class="hero-inner container">
       <h1>Turn spare minutes into a cultural mini-adventure.</h1>
-      <p class="hero-sub">Local-curated routes to hidden spots near major stations. No booking. Gentle walking.</p>
+      <p class="hero-sub">Locally curated routes to hidden spots near major stations. 30–40 minute quests from $5 <br>– your personal local guide.</p>
       <div class="hero-cta">
-        <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="hero">Start now</a>
-        <!--<a class="btn ghost" href="#stations">Pick a nearby station</a>
-        <p class="trust">No booking · No app download · GPS-powered</p>-->
+        <!-- 下のエリアボタンの「タイトル」として機能させる見出し -->
+        <p class="hero-price-text">See quests from $5</p>
       </div>
 
-      <!-- Quick station pills (primary test lever) -->
+      <!-- Quick station pills（エリアごとの選択肢なのでそのままクリック可能） -->
       <div class="station-pills" id="stations-quick">
         <a class="pill" data-cta="pill" href="https://tokyo-quest.com/en/select?location=Shibuya" aria-label="Choose Shibuya quest">Shibuya</a>
         <a class="pill" data-cta="pill" href="https://tokyo-quest.com/en/select?location=Shinjuku" aria-label="Choose Shinjuku quest">Shinjuku</a>
@@ -107,14 +107,13 @@
       </div>
 
       <!-- Hero screenshots -->
-<div class="hero-screens" aria-label="In-app screenshots">
-  <img src="./assets/SS1.png" alt="Tokyo Quest in-app screen 1" loading="lazy" decoding="async">
-  <img src="./assets/SS2.png" alt="Tokyo Quest in-app screen 2" loading="lazy" decoding="async">
-</div>
+      <div class="hero-screens" aria-label="In-app screenshots">
+        <img src="./assets/SS1.png" alt="Tokyo Quest in-app screen 1" loading="lazy" decoding="async">
+        <img src="./assets/SS2.png" alt="Tokyo Quest in-app screen 2" loading="lazy" decoding="async">
+      </div>
       
-
-      <!-- Time intent switch -->
-      <!--<div class="time-band" role="group" aria-label="Time you have">
+      <!-- Time intent switch (currently disabled)
+      <div class="time-band" role="group" aria-label="Time you have">
         <span class="time-label">Time left:</span>
         <button class="time-btn" data-min="15">15m</button>
         <button class="time-btn is-active" data-min="30">30m</button>
@@ -139,9 +138,35 @@
         </article>
         <article class="b-card">
           <h3>No lines</h3>
-          <p>Low‑crowd backstreets. Quick wins without queues.</p>
+          <p>Low-crowd backstreets. Quick wins without queues.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- VALUE: what you get for $5 -->
+  <section id="value" class="section value">
+    <div class="container">
+      <h2 class="section-title">What you get from $5 per quest</h2>
+      <div class="benefit-grid">
+        <article class="b-card">
+          <h3>30–40 minute gentle walk</h3>
+          <p>3–4 stops within about 1–2 km of the station, mostly flat streets.</p>
+        </article>
+        <article class="b-card">
+          <h3>Hidden spots locals actually use</h3>
+          <p>Small shrines, back alleys and everyday places rarely shown on “Top 10” lists.</p>
+        </article>
+        <article class="b-card">
+          <h3>Cultural stories in clear English</h3>
+          <p>Short background notes at each stop—history, customs and local life.</p>
+        </article>
+        <article class="b-card">
+          <h3>Flexible and low-risk</h3>
+          <p>Start anytime, fit between other plans. Secure card payment powered by Stripe.</p>
+        </article>
+      </div>
+      <p class="microcopy">Designed with mature travelers in mind—calmer streets, fewer crowds, more meaning.</p>
     </div>
   </section>
 
@@ -162,6 +187,10 @@
           <h3>3. Learn as you go</h3>
           <p>Short cultural notes at each stop.</p>
         </article>
+        <article class="b-card">
+          <h3>4. Unlock one quest from $5</h3>
+          <p>Pay per route, then follow the hints on your own phone.</p>
+        </article>
       </div>
       <!-- In-app screenshot carousel -->
       <div class="shots" role="region" aria-label="App screenshots">
@@ -174,7 +203,7 @@
           <figcaption>Check playable areas on a map</figcaption>
         </figure>
         <figure class="shot">
-          <img class="lazy" data-src="./assets/screen-03.webp" alt="Meaning and history for each spot" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <img class="lazy" data-src="./assets/screen-03.webp" alt="Meaning and history behind each spot" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
           <figcaption>Meaning and history behind each spot</figcaption>
         </figure>
       </div>
@@ -209,9 +238,7 @@
           </div>
         </a>
       </div>
-      <div class="center">
-        <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="mid">Start now</a>
-      </div>
+      <!-- ここにあった 2つ目の "See quests from $5." テキストは削除 -->
     </div>
   </section>
 
@@ -225,7 +252,7 @@
         <li>Already saw the famous spots</li>
         <li>Want local vibes</li>
       </ul>
-      <a class="btn ghost" href="https://tokyo-quest.com/en" data-cta="band">Try it now</a>
+      <!-- 3つ目の "See quests from $5." テキストも削除 -->
     </div>
   </section>
 
@@ -264,7 +291,9 @@
 
   <!-- Sticky mobile CTA -->
   <div class="sticky-cta" role="region" aria-label="Sticky call to action">
-    <a class="btn primary" href="https://tokyo-quest.com/en" data-cta="sticky">Start Free</a>
+    <!-- 課金情報を通常テキストで表示 -->
+    <p class="sticky-copy">Start from $5<br>Choose a station to see available quests.</p>
+    <!-- ページ内スクロールのリンクはそのまま -->
     <a class="btn ghost small" href="#stations">Nearest station</a>
   </div>
 
