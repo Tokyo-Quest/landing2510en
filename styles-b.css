@@ -170,10 +170,33 @@ body{
 @media (min-width:900px){ .sticky-cta{display:none} }
 
 /* Footer */
-.site-footer{padding:18px 16px; background:#090d14; border-top:1px solid var(--line)}
-.footer-inner{max-width:1040px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:10px}
-.footer-link{color:var(--muted); text-decoration:none; margin-left:12px}
-.footer-link:hover{color:var(--fg)}
+/* Footer */
+.site-footer{
+  padding:18px 16px;
+  background:#090d14;
+  border-top:1px solid var(--line);
+  color:#e5e8ee;              /* ← フッター全体の文字色を明るくする */
+}
+
+.footer-inner{
+  max-width:1040px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.footer-link{
+  color:#e5e8ee;              /* ← リンクも明るいグレーに */
+  text-decoration:none;
+  margin-left:12px;
+}
+
+.footer-link:hover{
+  color:#ffffff;              /* ← ホバー時は真っ白に */
+}
+
 
 /* Progress bar */
 .progress-bar{
@@ -458,3 +481,14 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
 /* 念のため（既に定義あり） */
 html, body { overflow-x: hidden; }
 
+/* Hero price label: acts as a title for station pills */
+.hero-price-text {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  text-align: center;
+}
